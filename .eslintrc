@@ -26,6 +26,7 @@
     "no-console": "off",
     "no-restricted-syntax": "off",
     "import/no-cycle": "off",
+    "quotes": ["error", "single"],
     "max-len": [
       "error",
       {

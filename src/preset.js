@@ -1,5 +1,5 @@
-import BINARYUUID from "./define/binary-uuid";
-import VIRTUALBINARYUUID from "./define/virtual-uuid";
+import BINARYUUID from './define/binary-uuid';
+import VIRTUALBINARYUUID from './define/virtual-uuid';
 
 /*
   A simple preset for default key with virtual field
@@ -11,8 +11,8 @@ const DEFAULT_FIELD_OPS = Object.freeze({
 });
 
 export default function withBinaryUUID(definition, ops = {}) {
-  const primaryID = ops.primaryID || "id";
-  const virtualID = ops.virtualID || "uuid";
+  const primaryID = ops.primaryID || 'id';
+  const virtualID = ops.virtualID || 'uuid';
   const field = !definition && !ops.field ? DEFAULT_FIELD_OPS : ops.field;
   if (definition) {
     if (definition[primaryID]) {

@@ -1,5 +1,5 @@
-import { getBinaryUUID } from "../utils/binaryUUID";
-import BINARY from "../types/binary";
+import { getBinaryUUID } from '../utils/binaryUUID';
+import BINARY from '../types/binary';
 
 export default function BINARYUUID(props = {}) {
   const defaultValue =

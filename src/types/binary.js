@@ -1,9 +1,9 @@
-import util from "util";
+import util from 'util';
 
-import Sequelize from "sequelize";
-import sequelizeErrors from "sequelize/lib/errors";
+import Sequelize from 'sequelize';
+import sequelizeErrors from 'sequelize/lib/errors';
 
-import inherits from "../utils/inherits";
+import inherits from '../utils/inherits';
 
 /**
  * BINARY A variable binary string
@@ -15,7 +15,7 @@ import inherits from "../utils/inherits";
  *
  */
 function BINARY(length) {
-  const options = (typeof length === "object" && length) || { length };
+  const options = (typeof length === 'object' && length) || { length };
 
   if (!(this instanceof BINARY)) return new BINARY(options);
 
@@ -25,15 +25,15 @@ function BINARY(length) {
 
 inherits(BINARY, Sequelize.DataTypes.ABSTRACT);
 
-BINARY.prototype.key = BINARY.key = "BINARY";
+BINARY.prototype.key = BINARY.key = 'BINARY';
 BINARY.prototype.toSql = function toSql() {
   return `BINARY(${this._length})`;
 };
 
 BINARY.prototype.validate = function validate(value) {
-  if (!Buffer.isBuffer(value) && typeof value !== "number") {
+  if (!Buffer.isBuffer(value) && typeof value !== 'number') {
     throw new sequelizeErrors.ValidationError(
-      util.format("%j is not a valid binary buffer", value)
+      util.format('%j is not a valid binary buffer', value)
     );
   }
   return true;
@@ -49,7 +49,7 @@ BINARY.prototype._stringify = function _stringify(value) {
       value = Buffer.from(value.toString());
     }
   }
-  const hex = value.toString("hex");
+  const hex = value.toString('hex');
 
   return this._hexify(hex);
 };

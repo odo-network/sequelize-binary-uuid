@@ -1,4 +1,4 @@
-import util from "util";
+import util from 'util';
 
 /**
  * like util.inherits, but also copies over static properties. Inherit child constructor
