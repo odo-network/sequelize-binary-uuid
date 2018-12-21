@@ -25,7 +25,9 @@ In addition, the model will have a `uuid` virtual field which is the string vers
 import Sequelize from "sequelize";
 import { withBinaryUUID } from "sequelize-binary-uuid";
 
-const User = sql.define(
+// define sequelize...
+
+const User = sequelize.define(
   "User",
   withBinaryUUID(
     {
@@ -50,7 +52,7 @@ const User = sql.define(
 Once you have done this, you may interact with the table:
 
 ```javascript
-sql
+sequelize
   .sync({ force: true })
   .then(() =>
     Promise.all([
@@ -100,7 +102,9 @@ Using the `BINARYUUID` helper we can define a field as being a binary UUID. This
 import Sequelize from "sequelize";
 import { BINARYUUID } from "sequelize-binary-uuid";
 
-const User = sql.define("User", {
+// define sequelize...
+
+const User = sequelize.define("User", {
   // ... your model definition ...
   binaryUUID: BINARYUUID({
     // field params here...
@@ -121,7 +125,9 @@ Using `VIRTUALBINARYUUID` will make it easy to provide a `VIRTUAL` field which r
 import Sequelize from "sequelize";
 import { BINARYUUID, VIRTUALBINARYUUID } from "sequelize-binary-uuid";
 
-const User = sql.define("User", {
+// define sequelize...
+
+const User = sequelize.define("User", {
   // ... your model definition ...
   binaryUUID: BINARYUUID({
     allowNull: false
@@ -138,7 +144,9 @@ If you wish to construct your own binary type and/or binary UUID values, you can
 import Sequelize from "sequelize";
 import { BINARY, getBinaryUUID } from "sequelize-binary-uuid";
 
-const User = sql.define("User", {
+// define sequelize...
+
+const User = sequelize.define("User", {
   // ... your model definition ...
   customBinaryUUID: {
     type: BINARY(16)
