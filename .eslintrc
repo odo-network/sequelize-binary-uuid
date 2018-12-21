@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "env": {
+    "node": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "rules": {
+    "arrow-parens": ["off"],
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-multi-assign": "off",
+    "import/extensions": "off",
+    "class-methods-use-this": "off",
+    "function-paren-newline": ["error", "consistent"],
+    "no-unused-expressions": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "no-restricted-syntax": "off",
+    "import/no-cycle": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 90,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
+  },
+  "plugins": ["flowtype", "import"]
+}
