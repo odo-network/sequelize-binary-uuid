@@ -58,7 +58,7 @@ sql
   .then(console.log);
 ```
 
-```javascript
+```
 [ { uuid: '8cde7820-04c1-11e9-8d40-0d6e8c185c6c',
     id: <Buffer 11 e9 04 c1 8c de 78 20 8d 40 0d 6e 8c 18 5c 6c>,
     someKey: 'one',
