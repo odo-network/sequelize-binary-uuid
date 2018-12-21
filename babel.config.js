@@ -2,18 +2,19 @@ module.exports = function getBabelConfiguration(api) {
   api.cache(true);
   return {
     presets: [
-      '@babel/preset-flow',
+      "@babel/preset-flow",
       [
-        '@babel/preset-env',
+        "@babel/preset-env",
         {
-          useBuiltIns: 'usage',
+          useBuiltIns: "usage",
           shippedProposals: true,
           targets: {
-            node: '9.11.1',
-          },
-        },
+            node: "9.11.1"
+          }
+        }
       ],
-    ],
+      ...(process.env.NODE_ENV === "production" ? ["babel-preset-minify"] : [])
+    ].filter(Boolean)
     // plugins: ['@babel/proposal-class-properties', '@babel/plugin-proposal-optional-chaining'],
   };
 };

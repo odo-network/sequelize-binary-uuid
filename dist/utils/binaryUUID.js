@@ -1,0 +1,1 @@
+"use strict";var _binaryUuid=_interopRequireDefault(require("binary-uuid"));Object.defineProperty(exports,"__esModule",{value:!0}),exports.getBinaryUUID=getBinaryUUID;function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}function getBinaryUUID(){return(0,_binaryUuid.default)().buffer}

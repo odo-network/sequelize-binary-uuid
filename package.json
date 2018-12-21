@@ -2,12 +2,13 @@
   "name": "sequelize-binary-uuid",
   "version": "1.0.0",
   "description": "Makes it easy to implement binary(16) uuid's into Sequelize projects.",
-  "main": "src/binary-uuid.js",
+  "main": "dist/index.js",
   "author": "odo",
   "license": "MIT",
   "reveal": true,
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "virtual"
   ],
   "scripts": {
+    "build": "cross-env NODE_ENV=production rimraf dist && npm-run-all -p build:**",
+    "build:lib:babel": "cross-env NODE_ENV=production babel src --out-dir dist",
     "try": "node ./quick-test.js"
   },
   "devDependencies": {
@@ -32,6 +35,8 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-flow": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-preset-minify": "^0.5.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",

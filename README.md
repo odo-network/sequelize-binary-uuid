@@ -7,9 +7,13 @@ This package provides a few important exports:
 - A `BINARY` type (`binary(length)`).
 - A `BINARYUUID` field creator.
 - A `VIRTUALBINARYUUID` field creator.
-- A `WithBinaryUUID` preset field creator.
+- A `withBinaryUUID` preset field creator.
 
 This package makes it easy to use `binary(16)` UUID's instead of `CHAR(36)` which is the default. It also modifies the `UUID` so that it is more performant when indexing which can lead to **significant** performance improvements over naive implementations.
+
+## Examples
+
+Multiple examples are available in the [examples folders](./examples).
 
 ## Using `withBinaryUUID` preset (recommended)
 
@@ -35,6 +39,8 @@ const User = sql.define(
         // optionally provide extra parameters to the
         // `primaryID` binary field
         primaryKey: true
+        // primaryKey: true is required to make it a
+        // primaryKey!
       }
     }
   )
@@ -126,7 +132,7 @@ const User = sql.define("User", {
 
 ## Using the `BINARY` type
 
-If you wish to construct your own binary type and/or binary UUID values, you can follow the example below:
+If you wish to construct your own binary type and/or binary UUID values, you can follow the example below.
 
 ```javascript
 import Sequelize from "sequelize";
@@ -144,4 +150,20 @@ const User = sql.define("User", {
 User.create({
   customBinaryUUID: getBinaryUUID()
 });
+```
+
+## Helper Exports
+
+As a convenience, this package also re-exports some helpers from [`binary-uuid`](https://www.github.com/odo-network/binary-uuid), as well as some helper functions.
+
+```javascript
+import {
+  getBinaryUUID,
+  fromBinaryUUID,
+  toBinaryUUID
+} from "sequelize-binary-uuid";
+
+const buf = getBinaryUUID();
+const uuid = fromBinaryUUID();
+const buf2 = toBinaryUUID(uuid);
 ```
