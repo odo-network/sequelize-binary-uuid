@@ -60,19 +60,22 @@ sql
 
 ```
 [
-  { uuid: '8cde7820-04c1-11e9-8d40-0d6e8c185c6c',
+  {
+    uuid: '8cde7820-04c1-11e9-8d40-0d6e8c185c6c',
     id: <Buffer 11 e9 04 c1 8c de 78 20 8d 40 0d 6e 8c 18 5c 6c>,
     someKey: 'one',
     createdAt: 2018-12-21T01:41:35.000Z,
     updatedAt: 2018-12-21T01:41:35.000Z
   },
-  { uuid: '8cdec640-04c1-11e9-8d40-0d6e8c185c6c',
+  {
+    uuid: '8cdec640-04c1-11e9-8d40-0d6e8c185c6c',
     id: <Buffer 11 e9 04 c1 8c de c6 40 8d 40 0d 6e 8c 18 5c 6c>,
     someKey: 'two',
     createdAt: 2018-12-21T01:41:35.000Z,
     updatedAt: 2018-12-21T01:41:35.000Z
   },
-  { uuid: '8cdec641-04c1-11e9-8d40-0d6e8c185c6c',
+  {
+    uuid: '8cdec641-04c1-11e9-8d40-0d6e8c185c6c',
     id: <Buffer 11 e9 04 c1 8c de c6 41 8d 40 0d 6e 8c 18 5c 6c>,
     someKey: 'three',
     createdAt: 2018-12-21T01:41:35.000Z,
