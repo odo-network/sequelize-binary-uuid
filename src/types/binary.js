@@ -58,4 +58,16 @@ BINARY.prototype._hexify = function _hexify(hex) {
   return `X'${hex}'`;
 };
 
+BINARY.prototype._bindParam = function _bindParam(value, options) {
+  if (!Buffer.isBuffer(value)) {
+    if (Array.isArray(value)) {
+      value = Buffer.from(value);
+    }
+    else {
+      value = Buffer.from(value.toString());
+    }
+  }
+  return options.bindParam(value);
+}
+
 export default BINARY;
