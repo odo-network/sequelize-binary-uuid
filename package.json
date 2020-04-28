@@ -46,10 +46,10 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "rimraf": "^2.6.2",
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.15.1"
   },
   "peerDependencies": {
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.15.1"
   },
   "dependencies": {
     "binary-uuid": "^1.2.0"
